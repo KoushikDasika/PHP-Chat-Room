@@ -9,56 +9,9 @@
 
 	<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/l/jquery.min.js"></script>
-<script type="text/javascript" src="chat.js"></script>
-<script type="text/javascript">
-	//Prompt user for username
-	var name = prompt("Enter your user name:", "Guest");
-	
-	//Check to see if a name was entered
-	if(!name || name === ' '){
-		name = "Guest User";
-	}
-
-	//Use to display name
-	$("#name-position").html("You are: <span>" + name + "</span>");
-
-	//start off chat room
-	var chatroom = new Chatroom();
-	$(function(){
-		chatroom.getState();
-		
-		$("#sender").keydown(function(event){
-				var keydown = event.which;
-
-				if(keydown >34){
-					var maxLength = $(this).attr("maxlength");
-					var length = this.value.length;
-					
-					if(length > maxLength){
-						event.preventDefault();
-					}
-				}
-				
-				//handle cases of what the value entered is
-				$('#sender').keyup(function(e){
-					if(e.keyCode == 13){
-						var text = $(this).val();
-						var maxLength = $(this).attr("maxlength");
-						var length = text.length;
-
-						//send message
-						if(length < maxLength){
-							chat.send(text, name);
-							$(this).val("");
-						}
-						else{
-							$(this).val(text.substring(0.maxLength));
-						}
-					}
-});
-});
-</script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/l/jquery.min.js"></script>
+	<script type="text/javascript" src="chat.js"></script>
+	<script type="text/javascript" src="chatstart.js"></script>
 </head>
 
 <body onload="setInterval('chatroom.update()', 250)">
