@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="mystyle.css" type="text/css" />
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/l/jquery.min.js"></script>
-	<script type="text/javascript" src="chat.js"></script>
+	<script type="text/javascript" src="chatroom.js"></script>
 	<script type="text/javascript" src="chatstart.js"></script>
 </head>
 
