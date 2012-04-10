@@ -37,7 +37,7 @@ function updateChatroom(){
 				url: "processChat.php",
 				data:{
 					'function': 'updateChatroom',
-					'currentstate': state,
+					'currentstate': currentstate,
 					'file':file
 				},
 				dataType: "json",
