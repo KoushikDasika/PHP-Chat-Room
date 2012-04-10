@@ -5,6 +5,11 @@ var name = prompt("Enter your user name:", "Guest");
 if(!name || name === ' '){
 	name = "Guest User";
 }
+if(name.length > 25){
+	name.substring(0, 25);
+}
+// strip tags
+name = name.replace(/(<([^>]+)>)/ig,"");
 
 //Use to display name
 $("#name-position").html("You are: <span>" + name + "</span>");
@@ -15,13 +20,13 @@ $(function(){
 	chatroom.getState();
 	
 	$("#sender").keydown(function(event){
-			var keydown = event.which;
+			var key = event.which;
 
-			if(keydown >34){
+			if(key >= 33){
 				var maxLength = $(this).attr("maxlength");
 				var length = this.value.length;
 				
-				if(length > maxLength){
+				if(length >= maxLength){
 					event.preventDefault();
 				}
 			}
@@ -34,7 +39,7 @@ $(function(){
 			var length = text.length;
 
 			//send message
-			if(length < maxLength){
+			if(length <= maxLength + 1){
 				chat.send(text, name);
 				$(this).val("");
 			}

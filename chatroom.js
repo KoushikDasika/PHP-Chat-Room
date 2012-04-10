@@ -1,6 +1,6 @@
 var instance = false;
 var currentstate;
-var mes;
+var message;
 var file;
 
 function Chatroom(){
@@ -31,7 +31,7 @@ function getStateofChatroom(){
 
 function updateChatroom(){
 	if(!instance){
-		instance = ture;
+		instance = true;
 		$.ajax({
 				type: "POST",
 				url: "processChat.php",
