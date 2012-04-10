@@ -15,7 +15,7 @@ function getStateofChatroom(){
 		instance = true;
 		$.ajax({
 				type: "POST",
-				url: "process.php",
+				url: "processChat.php",
 				data:{
 					'function': 'getStateofChatroom',
 					'file' : file
